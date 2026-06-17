@@ -1,0 +1,245 @@
+/* Base Reset and Variables */
+:root {
+    --primary-color: #ff5722;
+    --primary-dark: #e64a19;
+    --text-color: #2c3e50;
+    --bg-color: #f9fbfd;
+    --card-bg: #ffffff;
+    --emergency-bg: #fff5f5;
+    --emergency-border: #feb2b2;
+    --emergency-text: #9b2c2c;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* Main Layout Setup */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+@media(min-width: 992px) {
+    .main-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Blog Post Typography & Elements */
+.blog-post {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+@media(min-width: 768px) {
+    .blog-post {
+        padding: 40px;
+    }
+}
+
+.category-tag {
+    background-color: #fff3e0;
+    color: var(--primary-dark);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.post-header h1 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: #1a202c;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.6;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.post-section {
+    margin-bottom: 35px;
+}
+
+.post-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #1a202c;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 8px;
+}
+
+.post-section h3 {
+    font-size: 1.2rem;
+    margin: 20px 0 10px 0;
+    color: #2d3748;
+}
+
+.post-section p {
+    margin-bottom: 15px;
+}
+
+.post-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.post-section li {
+    margin-bottom: 8px;
+}
+
+/* Special Box Frameworks */
+.emergency-box {
+    background-color: var(--emergency-bg);
+    border: 1px solid var(--emergency-border);
+    padding: 25px;
+    border-radius: 8px;
+    color: var(--emergency-text);
+}
+
+.emergency-box h2 {
+    color: var(--emergency-text);
+    border-bottom-color: var(--emergency-border);
+}
+
+.warning-text {
+    font-weight: 700;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.post-conclusion {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
+.sign-off {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 15px;
+}
+
+/* Sidebar & Sticky Widget */
+.sidebar .sticky-widget {
+    position: sticky;
+    top: 100px; /* Aligns smoothly under sticky header */
+    background-color: #fff8f5;
+    border: 1px solid #ffe8e0;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.sticky-widget h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.checklist input[type="checkbox"] {
+    margin-top: 5px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.checklist label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.checklist input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #a0aec0;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
